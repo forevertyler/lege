@@ -103,6 +103,53 @@
             width: 40%;
             text-align: right;
         }
+        .pro-color p, .pro-size p, .pro-spec p {
+            margin-left: 34px;
+            overflow: hidden;
+        }
+        ro-buy-style p a, .pro-color p a, .pro-size p a, .pro-spec p a {
+            height: 27px;
+            border: 1px solid #bfbfbf;
+            border-radius: 4px;
+            line-height: 25px;
+            font-size: 13px;
+            color: #232326;
+            float: left;
+            margin-right: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-width: 69px;
+            max-width: 98%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .pro-buy-style p a:active,.pro-color p a:active,.pro-size p a:active,.pro-spec p a:active {
+          background-color: #e7e7e7
+        }
+
+        .pro-buy-style p a.selected,.pro-color p a.selected,.pro-size p a.selected,.pro-spec p a.selected {
+          border: 1px solid #f23030;
+          color: #f23030
+        }
+
+        .pro-buy-style p a.no-goods,.pro-color p a.no-goods,.pro-size p a.no-goods,.pro-spec p a.no-goods {
+          border: 1px dashed #bfbfbf;
+          color: #232326
+        }
+
+        .list-yb:after,.pro-buy-style:after,.pro-color:after,.pro-size:after,.pro-spec:after {
+          visibility: hidden;
+          display: block;
+          font-size: 0;
+          content: " ";
+          clear: both;
+          height: 0
+        }
     </style>
 
 </head>
@@ -177,34 +224,23 @@
             <div class="item-media"><i class="icon icon-f7"></i></div>
             <div class="item-inner">
               <div class="item-title">充值金额</div>
-              <input class="item-after" type="text" placeholder="充值金额" id="picker" readonly="">
+              <!-- <input class="item-after" type="text" placeholder="充值金额" id="picker" readonly=""> -->
             </div>
-
-
-             
-       
       </li>
-      <div checkbox>
-        <div name="a" value="50g">
-            <h2>50G</h2>
-            <p>硬盘</p>
-        </div>
-        <div name="a" value="500g">
-            <h2>500G</h2>
-            <p>硬盘</p>
-        </div>
-        <div name="a" value="1t">
-            <h2>1T</h2>
-            <p>硬盘</p>
+      <li>
+            <div class="nature-container" id="natureCotainer">
+              <div class="pro-color"> 
+                <p id="color">
+                  <a title="500元 赠送0元" class="a-item selected J_ping" report-eventparam="500元 赠送0元">500元 赠送0元</a>
+                  <a title="500元 赠送0元" class="a-item J_ping" report-eventparam="500元 赠送0元">500元 赠送0元</a>
+                  <a title="500元 赠送0元" class="a-item J_ping" report-eventparam="500元 赠送0元">500元 赠送0元</a>
+                  <a title="500元 赠送0元" class="a-item J_ping" report-eventparam="500元 赠送0元">500元 赠送0元</a>
+                  <a title="500元 赠送0元" class="a-item J_ping" report-eventparam="500元 赠送0元">500元 赠送0元</a>
+                </p>
+              </div>
             </div>
-        <div name="a" value="10t">
-            <h2>10T</h2>
-            <p>硬盘</p>
-        </div>
-      </div> 
-  
-    </ul>
-  </div>
+      </li>
+
   
 
 </div>
@@ -216,24 +252,26 @@ $(function(){
      });
 })
 
+$(function() {
+        // $(".clickwn").click(function() {
+        //   $(".flick-menu-mask").show();
+        //   $(".spec-menu").show();
+        // })
+        // $(".tclck").click(function() {
+        //   $(".flick-menu-mask").hide();
+        //   $(".spec-menu").hide();
+        // })
+        $('#cool').bind('input propertychange', function() { /* alert(this.value);*/
+          $('.amount').html(this.value)
+        }).bind('input input', function() {});
+        $('#color a').click(function() {
+          var cook = $(this).index();
+          $('#color a').eq(cook).addClass('selected').siblings().removeClass('selected');
+        })
 
+      })
 </script>
 
-<script>
-$("#picker").picker({
 
-  toolbarTemplate: '<div class="bar bar-nav">\
-  <button class="button button-link pull-left">按钮</button>\
-  <button class="button button-link pull-right close-picker">确定</button>\
-  <h1 class="title">标题</h1>\
-  </div>',
-  cols: [
-    {
-      textAlign: 'center',
-      values: ['500', '1000', '1500', '2000', '2500', '3000']
-    }
-  ]
-});
-</script>
 </body>
 </html>
