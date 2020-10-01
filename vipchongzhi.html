@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>会员卡</title>
+    <title>会员卡充值</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href=" ./dist/css/sm-extend.min.css">
     <link rel="stylesheet" href=" ./dist/css/animate.css">
     <link rel="stylesheet" href=" ./dist/css/swiper.min.css">
+    <link rel="stylesheet" href=" ./dist/css/xuankuang.css">
     
 
 
@@ -21,6 +22,7 @@
     <script src=' ./dist/js/sm-extend.js'></script>
     <script src=' ./dist/js/swiper.min.js'></script>
     <script src=' ./dist/js/goback.js'></script>
+    <script src=' ./dist/js/inpitassembly.js'></script>
 
     <style>
         html{font-size: 20px;}
@@ -55,6 +57,7 @@
             height:auto;
             display: block;
         }
+        .list-block .item-content{padding-left: 0;}
         .cards-list li{
           background: url(img/vip.jpg);
         }
@@ -74,6 +77,7 @@
         .card1 p{margin: 0;}
         .card1 a{display: block;color: #3d4145;}
         .content-padded p span{margin-left: .5rem;color: #aaa;}
+        .list-block1{margin-bottom: .5rem;}
         .list-block1 ul{width: 95%;margin: 0 auto;}
         .list-block1 ul li:before{
             content: '';
@@ -93,6 +97,11 @@
         .list-block1 ul li a{
             display: block;
             color: #3d4145;
+        }
+        .list-block1 input.item-after {
+            display: block;
+            width: 40%;
+            text-align: right;
         }
     </style>
 
@@ -122,51 +131,81 @@
     </div>
     <div class="list-block list-block1">
      <ul>
-      <li class=""><a class="item-content item-link" href="vipchongzhi.html">
-        <div class="item-media"><i class="icon icon-f7"></i></div>
-        <div class="item-inner">
-          <div class="item-title">会员卡充值</div>
-          <div class="item-after"></div>
-        </div></a>
+      <li class="">
+          <a class="item-content" href="#">
+            <div class="item-media"><i class="icon icon-f7"></i></div>
+            <div class="item-inner">
+              <div class="item-title">姓名</div>
+              <div class="item-after">大雄</div>
+            </div>
+          </a>
       </li>
-      <li class=""><a class="item-content item-link" href="#">
-        <div class="item-media"><i class="icon icon-f7"></i></div>
-        <div class="item-inner">
-          <div class="item-title">会员转赠</div>
-          <div class="item-after"></div>
-        </div></a>
+      <li class="">
+          <a class="item-content" href="#">
+            <div class="item-media"><i class="icon icon-f7"></i></div>
+            <div class="item-inner">
+              <div class="item-title">手机号</div>
+              <div class="item-after">13111111111</div>
+            </div>
+          </a>
       </li>
-      <li class=""><a class="item-content item-link" href="#">
-        <div class="item-media"><i class="icon icon-f7"></i></div>
-        <div class="item-inner">
-          <div class="item-title">历史消费</div>
-          <div class="item-after"></div>
-        </div></a>
+      <li class="">
+          <a class="item-content" href="#">
+            <div class="item-media"><i class="icon icon-f7"></i></div>
+            <div class="item-inner">
+              <div class="item-title">卡号</div>
+              <div class="item-after">9999999999999999</div>
+            </div>
+          </a>
       </li>
-      <li class=""><a class="item-content item-link" href="#">
-        <div class="item-media"><i class="icon icon-f7"></i></div>
-        <div class="item-inner">
-          <div class="item-title">会员充值</div>
-          <div class="item-after"></div>
-        </div></a>
-      </li>
-      <li class=""><a class="item-content item-link" href="#">
-        <div class="item-media"><i class="icon icon-f7"></i></div>
-        <div class="item-inner">
-          <div class="item-title">领取转赠</div>
-          <div class="item-after"></div>
-        </div></a>
-      </li>
-      <li class=""><a class="item-content item-link" href="#">
-        <div class="item-media"><i class="icon icon-f7"></i></div>
-        <div class="item-inner">
-          <div class="item-title">会员充值</div>
-          <div class="item-after"></div>
-        </div></a>
-      </li>
-
     </ul>
   </div>
+
+  <div class="list-block list-block1" >
+     <ul>
+      <li class="item-content">
+       
+            <div class="item-media"><i class="icon icon-f7"></i></div>
+            <div class="item-inner">
+              <div class="item-title">推荐人工号</div>
+              <input class="item-after" type="text" placeholder="请填写推荐人" >
+            </div>
+          
+      </li>
+      <li class="item-content">
+       
+            <div class="item-media"><i class="icon icon-f7"></i></div>
+            <div class="item-inner">
+              <div class="item-title">充值金额</div>
+              <input class="item-after" type="text" placeholder="充值金额" id="picker" readonly="">
+            </div>
+
+
+             
+       
+      </li>
+      <div checkbox>
+        <div name="a" value="50g">
+            <h2>50G</h2>
+            <p>硬盘</p>
+        </div>
+        <div name="a" value="500g">
+            <h2>500G</h2>
+            <p>硬盘</p>
+        </div>
+        <div name="a" value="1t">
+            <h2>1T</h2>
+            <p>硬盘</p>
+            </div>
+        <div name="a" value="10t">
+            <h2>10T</h2>
+            <p>硬盘</p>
+        </div>
+      </div> 
+  
+    </ul>
+  </div>
+  
 
 </div>
 
@@ -180,6 +219,21 @@ $(function(){
 
 </script>
 
+<script>
+$("#picker").picker({
 
+  toolbarTemplate: '<div class="bar bar-nav">\
+  <button class="button button-link pull-left">按钮</button>\
+  <button class="button button-link pull-right close-picker">确定</button>\
+  <h1 class="title">标题</h1>\
+  </div>',
+  cols: [
+    {
+      textAlign: 'center',
+      values: ['500', '1000', '1500', '2000', '2500', '3000']
+    }
+  ]
+});
+</script>
 </body>
 </html>
